@@ -6,16 +6,16 @@
 number = int(input('введите натуральное число: '))
 
 to_flip = 0
-copied_number = number  # сделаем копию числа, чтобы получить число разрядов исходного числа
+copied = number  # сделаем копию числа, воспользуемся ей чтобы получить количество разрядов числа
 
-while copied_number // 10 > 0:
+while True:
     to_flip += 1
-    copied_number = copied_number // 10  # оставляем от числа все разряды кроме младшего
-    if copied_number // 10 == 0:  # если последний разряд, то выходим из цикла
+    copied = copied // 10  # оставляем от числа все разряды кроме младшего
+    if copied // 10 == 0:  # если последний разряд, то выходим из цикла
         to_flip += 1
         break
 
-flipped_number = 0
+flipped = 0
 
 while to_flip > 0:
     if number < 10:
@@ -28,10 +28,10 @@ while to_flip > 0:
         else:
             digit = number % (number // 10)  # получаем цифру, которую нужно перенести в младший разряд
 
-    flipped_number += digit * 10 ** (to_flip - 1)
+    flipped += digit * 10 ** (to_flip - 1)
 
     number = number // 10
 
     to_flip -= 1
 
-print(flipped_number)
+print(flipped)
