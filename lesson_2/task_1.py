@@ -11,24 +11,30 @@
 
 
 def calculate_two_numbers(first: int, second: int, operator: str):
-    """функция выполняет арифметическую операцию,
-    запрошенную пользователем (сложение, вычитание, умножение, деление),
-    с числами first и second."""
-
+    """функция возвращает результат арифметической операции operator с числами first и second,
+    переданной пользователем из списка:
+    "+" сложение,
+    "-" вычитание,
+    "*" умножение,
+    "/" деление.
+    Возвращает текст ошибки, если команды нет в списке выше.
+    Возвращает текст ошибки, если передано деление на 0.
+    """
     if operator == '+':
-        result = first + second
+        calc_result = first + second
     elif operator == '-':
-        result = first - second
+        calc_result = first - second
     elif operator == '*':
-        result = first * second
+        calc_result = first * second
     elif operator == '/':
         if second == 0:
             return 'на 0 делить нельзя'
-        result = first / second
+        else:
+            calc_result = first / second
     else:
         return 'вы ввели неверную команду'
 
-    return result
+    return calc_result
 
 
 while True:
@@ -45,4 +51,5 @@ while True:
     if operator == '0':
         break
     else:
-        print('результат: ', calculate_two_numbers(a, b, operator))
+        result = calculate_two_numbers(a, b, operator)
+        print('результат: ', result)
