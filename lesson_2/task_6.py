@@ -12,7 +12,7 @@ count = 0
 secret = randint(0, 100)
 
 # блок отгадывания, не пускает на 11 попытку
-while count < 10:
+while True:
     count += 1
     answer = int(input(f'Попытка номер {count}. Введи число от 0 до 100: '))
 
