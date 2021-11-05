@@ -13,25 +13,25 @@ print(f'\nисходный массив: {array}\n')
 # решение
 
 # пусть минимальный и максимальный элемент массива - находится в ячейке 0
-max = array[0]
-max_idx = 0
+max_el = array[0]
+max_el_idx = 0
 
-min = array[0]
-min_idx = 0
+min_el = array[0]
+min_el_idx = 0
 
-# переберем остальной массив, сравним с min и max и
+# переберем остальной массив, сравним с min_el и max_el и
 # получим индексы элементов, которые нужно поменять местами
 for idx in range(1, len(array)):
-    if array[idx] > max:
-        max = array[idx]
-        max_idx = idx
-    elif array[idx] < min:
-        min = array[idx]
-        min_idx = idx
+    if array[idx] > max_el:
+        max_el = array[idx]
+        max_el_idx = idx
+    elif array[idx] < min_el:
+        min_el = array[idx]
+        min_el_idx = idx
 
-spam = array[max_idx]
-array[max_idx] = array[min_idx]
-array[min_idx] = spam
+spam = array[max_el_idx]
+array[max_el_idx] = array[min_el_idx]
+array[min_el_idx] = spam
 
 print(f'решение:         {array}')
 

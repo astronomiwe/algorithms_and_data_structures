@@ -18,21 +18,21 @@ print(f'\nисходный массив: {array}\n')
 # сначала найдем минимальный элемент в массиве
 
 # пусть минимальный и максимальный элемент массива - находится в ячейке 0
-min = array[0]
-min_idx = 0
+min_el = array[0]
+min_el_idx = 0
 
 # переберем остальной массив, сравним с min и max и
 # получим индексы элементов, между которыми будем считать
 for i in range(1, len(array)):
-    if array[i] < min:
-        min = array[i]
-        min_idx = i
+    if array[i] < min_el:
+        min_el = array[i]
+        min_el_idx = i
 
 # найдем искомый элемент, который по условию задачи
 # является числом в диапазоне [min, 0)
 
 max_negative_num = min
-max_negative_num_idx = min_idx
+max_negative_num_idx = min_el_idx
 
 for j in range(0, len(array)):
     if 0 > array[j] >= max_negative_num:
